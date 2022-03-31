@@ -3,6 +3,7 @@
 body {
   background: #ddd;
   font-family: "Open Sans", sans-serif;
+  font-size: 24px;
 }
 
 .container {
@@ -14,17 +15,19 @@ body {
   margin: 15px auto;
 }
 
+.about img {
+  max-width: 300px;
+  display: inline;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
 .about h1 {
   margin: 0;
 }
 .about p {
   margin: 0;
-}
-
-.about img {
-  width: 66%;
-  display: block;
-  border-radius: 15px;
 }
 
 .contacts a {
@@ -43,6 +46,7 @@ body {
   margin: 15px 0px;
   border-bottom: 5px solid black;
   border-right: 5px solid black;
+  transition: background-color 0.5s;
   box-sizing: border-box;
 }
 
@@ -50,12 +54,10 @@ body {
   margin: 0;
 }
 
-.hobby {
-  background: royalblue;
-}
+.card:hover {
+  transition: all 0.5s;
 
-.stack {
-  background: coral;
+  background: #eee;
 }
 
 .list {
@@ -69,20 +71,25 @@ body {
   margin: 5px 0;
   padding: 0 5px;
 
-  border-left: 3px solid royalblue;
+  border-left: 3px solid black;
   border-radius: 10px;
+
+  transition: margin-left 0.5s;
 }
 
-.hobby .list li {
-  border-left-color: coral;
+.list li:hover {
+  margin-left: 30px;
+  transition: margin-left 0.5s;
 }
 
-@media (max-width: 500px) {
-  .about img {
-    width: 80%;
-    margin: auto;
-  }
+.list li:nth-child(odd) {
+  color: royalblue;
+}
+.list li:nth-child(even) {
+  color: coral;
+}
 
+@media (max-width: 800px) {
   .about {
     text-align: center;
   }
@@ -94,11 +101,15 @@ body {
 }
 
 a {
+  color: inherit;
   text-decoration: none;
+  transition: all 0.2s;
 }
 
 a:hover {
-  color: royalblue;
+  color: coral;
+  font-size: 2rem;
+  transition: all 0.2s;
 }
 a:active {
   color: darkblue;
